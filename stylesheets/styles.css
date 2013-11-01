@@ -95,8 +95,12 @@ img {
   max-width:100%;
 }
 
+.site-logo {
+  margin:0 0 20px;  
+}
+
 header {
-  width:270px;
+  width:200px;
   float:left;
   position:fixed;
 }
@@ -160,7 +164,7 @@ header ul a strong {
 }
 
 section {
-  width:500px;
+  width:600px;
   float:right;
   padding-bottom:50px;
 }
