@@ -32,18 +32,31 @@
         <h4>Portal API</h4>
         <p>Read about the Portal's API in <a href="https://github.com/esdet/esdportal_str/wiki">the esdportal_str wiki.</a></p>
         <h4>CSV exports</h4>
-        <ul>
-          <li><a href="https://portal.excellentschoolsdetroit.org/sites/portal.excellentschoolsdetroit.org/files/csvs/esd_hs_2013.csv">esd_hs_2013.csv</a></li>
-          <li><a href="https://portal.excellentschoolsdetroit.org/sites/portal.excellentschoolsdetroit.org/files/csvs/esd_k8_2013.csv">esd_k8_2013.csv</a></li>
-          <li><a href="https://portal.excellentschoolsdetroit.org/sites/portal.excellentschoolsdetroit.org/files/csvs/esd_k8_2013_r1.csv">esd_k8_2013_r1.csv</a></li>
-          <li><a href="https://portal.excellentschoolsdetroit.org/sites/portal.excellentschoolsdetroit.org/files/csvs/fiveessentials_2013.csv">fiveessentials_2013.csv</a></li>
-          <li><a href="https://portal.excellentschoolsdetroit.org/sites/portal.excellentschoolsdetroit.org/files/csvs/earlychild.csv">earlychild.csv</a></li>
-          <li><a href="https://portal.excellentschoolsdetroit.org/sites/portal.excellentschoolsdetroit.org/files/csvs/schools.csv">schools.csv (all ESD-indexed schools with BCODEs)</a></li>
+        <ul class="csvs">
+          <li><a href="https://portal.excellentschoolsdetroit.org/sites/portal.excellentschoolsdetroit.org/files/csvs/esd_hs_2013.csv">esd_hs_2013</a></li>
+          <li><a href="https://portal.excellentschoolsdetroit.org/sites/portal.excellentschoolsdetroit.org/files/csvs/esd_k8_2013.csv">esd_k8_2013</a></li>
+          <li><a href="https://portal.excellentschoolsdetroit.org/sites/portal.excellentschoolsdetroit.org/files/csvs/esd_k8_2013_r1.csv">esd_k8_2013_r1</a></li>
+          <li><a href="https://portal.excellentschoolsdetroit.org/sites/portal.excellentschoolsdetroit.org/files/csvs/fiveessentials_2013.csv">fiveessentials_2013</a></li>
+          <li><a href="https://portal.excellentschoolsdetroit.org/sites/portal.excellentschoolsdetroit.org/files/csvs/earlychild.csv">earlychild</a></li>
+          <li><a href="https://portal.excellentschoolsdetroit.org/sites/portal.excellentschoolsdetroit.org/files/csvs/schools.csv">schools (all ESD-indexed schools with BCODEs)</a></li>
         </ul>
       </section>
       <footer>
       </footer>
     </div>
     <script src="javascripts/scale.fix.js"></script>
+    <script>
+    function pad(n) {
+      return (n < 10) ? ("0" + n) : n;
+    }
+    var i = 0;
+    var csvlinks = document.querySelectorAll('ul a');
+    var d = new Date();
+    var newending = '-' + pad(d.getDate()) + '_' + pad(d.getMonth()+1) + '_' + d.getFullYear() + '.csv';
+    while (i < csvlinks.length) {
+      csvlinks[i].href = csvlinks[i].href.replace(/.csv$/, newending);
+      i++;
+    }
+    </script>
   </body>
 </html>
