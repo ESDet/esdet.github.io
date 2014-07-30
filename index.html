@@ -50,8 +50,9 @@
       return (n < 10) ? ("0" + n) : n;
     }
     var i = 0;
-    var csvlinks = document.querySelectorAll('ul a');
+    var csvlinks = document.querySelectorAll('ul.csvs a');
     var d = new Date();
+    d.setTime(d.getTime()-d.getTimezoneOffset());
     var newending = '-' + pad(d.getDate()) + '_' + pad(d.getMonth()+1) + '_' + d.getFullYear() + '.csv';
     while (i < csvlinks.length) {
       csvlinks[i].href = csvlinks[i].href.replace(/.csv$/, newending);
